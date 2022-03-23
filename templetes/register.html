@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'styles/register.css'%}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Poppins:wght@300&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Registration Form</title>
+</head>
+<body>
+    <br><br><br><br><br><br><br><br><br><br><br><br> 
+
+    <div class="wrapper">
+
+        <div class="title">
+            Register Here
+        </div>
+
+        <hr size="3px" color="black">
+        <br>
+
+        <form method="POST" action="register">
+            {% csrf_token %}
+            <!-- Name -->
+            <div class="name">
+                <div id="fname" class="same">
+                    <input type="text" placeholder="First Name"  name="first_name" Required>
+                </div>
+                
+
+                <div id="lname" class="same"  >
+                    <input type="text" placeholder="Last Name" name="last_name" Required>
+                </div>
+            </div>
+            <!-- email -->
+
+            <div class="email" style="position: relative ;" >
+                <input type="e-mail" placeholder="Email" class="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                <i  class="fa fa-envelope" ></i>
+            </div>
+
+            <!-- username -->
+            <div class="input_field">
+                <input type="Username" placeholder="Username" class="input" name="username" required>
+                <i class="fa fa-user"></i>
+            </div>
+            
+             <!-- password -->
+             <div class="input_field">
+                <input type="password" placeholder="Password" class="input" name="password1"required>
+                <i class="fa fa-lock"></i>
+            </div>
+
+            <div class="input_field">
+                <input type="password" placeholder=" Confirm Password" class="input" name="password2"required>
+                <i class="fa fa-lock"></i>
+            </div>
+
+            <!-- Buttons -->
+            <div class="btn">
+                <div id="login" class="button">
+                    <a href="/login">Login</a>
+                </div>
+                 
+                <div class="button" id="register" style="margin-left: 95px;" >
+                    <button type="submit" id="R-button" style="border: none;
+                "> Register </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <div>
+        {% for message in messages%}
+        {{message}}
+        {% endfor %}
+    </div>
+    <div>
+       
+    </div>
+</body>
+
+</html>

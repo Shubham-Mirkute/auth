@@ -1,0 +1,52 @@
+
+{% load static %}
+	
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+<body style="overflow-x: hidden;overflow-y: hidden;">
+	<div>
+		{% for message in messages%}
+		<script>
+			alert('{{ message }}');
+		</script>
+		{% endfor %}
+	</div>
+<div style=" position:absolute; left: 20px; top:105px; border-radius: 15px; border: 7px solid rgb(0, 194, 10); display: inline-block;"
+		class="top">
+		<p style=" color: antiquewhite; font-size:90px;   font-family: 'Lobster', cursive; letter-spacing: 3px; padding: 15px; "
+			class="para">MindWings</p>
+	</div>
+	<p
+		style="  position: absolute;top: 265px; padding-bottom: 15px; margin-left: 290px; color: rgb(3, 3, 3); font-size: 24px; letter-spacing:1px; font-family: 'Anton', sans-serif; ">
+		The Online Book Store</p>
+
+
+	<div style="  position:absolute; left: 20px; top:90px; display: inline-block;" class="mid">
+		<pre
+			style=" position: absolute; top: 185px; 
+	left: 800px; color: rgb(0, 0, 0); text-shadow: 8px 8px 8px rgb(126, 126, 126); font-size:40px;   font-family: 'Lobster', cursive; letter-spacing: 3px;">
+		"  A Book Is 
+		       A 
+		Gift That You Can 
+		      Open 
+	    Again And Again !! "
+	</pre>
+	</div>
+
+
+	<div class="img">
+		<img style="  width: 99vw;height:97vh; z-index: -3;  top:-30px; left: -10px;  "
+			src="{%static 'images\homeimg2.png'%}"
+			alt="image">
+
+	</div>
+</body>
+</html>
